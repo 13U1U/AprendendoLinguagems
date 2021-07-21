@@ -22,3 +22,6 @@ console.log("2" + "2");
 
 // convertendo tipos
 console.log(parseInt("2") + parseInt("2"));
+
+// interpolando variaveis
+console.log(`minha idade ${idade}`);
