@@ -32,3 +32,22 @@ console.log(`minha idade ${idade}`);
 // de 
 // uma
 // vez
+
+//LISTAS
+const listadestinos = new Array(
+    "Salvador",
+    "São Paulo",
+    "Rio de Janeiro",
+    "Curitiba"
+);
+
+// adicionando elementos a lista
+listadestinos.push("Florianopolis");
+
+//removendo elementos
+listadestinos.splice(3,1); //primeiro o numero do elemento depois quantos elementos
+console.log(listadestinos[0]) //elemento especifico
+
+
+
+
