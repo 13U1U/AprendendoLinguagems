@@ -25,3 +25,10 @@ console.log(parseInt("2") + parseInt("2"));
 
 // interpolando variaveis
 console.log(`minha idade ${idade}`);
+
+// ctr+k+c
+// comenta 
+// todo
+// de 
+// uma
+// vez
