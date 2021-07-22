@@ -51,8 +51,10 @@ console.log(listadestinos[0]) //elemento especifico
 
 // COMDICIONAIS
 if(idade >= 18){
-    console.log("voce é maior de idade")
+    console.log("voce é maior de idade");
 }else{
-    console.log("voce é menor de idade")
+    console.log("voce é menor de idade");
 };
+
+
 
