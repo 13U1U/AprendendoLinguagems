@@ -62,3 +62,12 @@ if(idade >= 18 || idade == true){
 if(idade >= 18 && idade == true){
     console.log("voce é maior de idade")
 }
+
+// LOPS
+
+// while
+let contador = 0;
+while(contador < 6){
+    console.log(contador);
+    contador ++;
+};
