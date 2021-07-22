@@ -58,4 +58,7 @@ if(idade >= 18){
 
 // shift + alt + F == formatar codigo
 
-
+// ou = ||
+if(idade >= 18 || idade == true){
+    console.log("voce é maior de idade")
+}
