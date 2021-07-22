@@ -49,5 +49,10 @@ listadestinos.splice(3,1); //primeiro o numero do elemento depois quantos elemen
 console.log(listadestinos[0]) //elemento especifico
 
 
-
+// COMDICIONAIS
+if(idade >= 18){
+    console.log("voce é maior de idade")
+}else{
+    console.log("voce é menor de idade")
+};
 
