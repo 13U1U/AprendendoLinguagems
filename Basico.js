@@ -58,7 +58,12 @@ if(idade >= 18){
 
 // shift + alt + F == formatar codigo
 
-// ou = ||
+// OU == OR == ||
 if(idade >= 18 || idade == true){
+    console.log("voce é maior de idade")
+}
+
+// tambem == AND == &&
+if(idade >= 18 && idade == true){
     console.log("voce é maior de idade")
 }
