@@ -71,3 +71,8 @@ while(contador < 6){
     console.log(contador);
     contador ++;
 };
+
+//break
+if(contador == 2){
+    break
+}
