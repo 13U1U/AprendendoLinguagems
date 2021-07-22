@@ -56,5 +56,6 @@ if(idade >= 18){
     console.log("voce é menor de idade");
 };
 
+// shift + alt + F == formatar codigo
 
 
