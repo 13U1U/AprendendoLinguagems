@@ -76,3 +76,9 @@ while(contador < 6){
 if(contador == 2){
     break
 }
+
+//FOR
+for(let cont = 0 ; cont < 6; cont++){
+    console.log(cont);
+};
+
