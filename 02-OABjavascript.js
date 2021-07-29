@@ -30,3 +30,9 @@ conta1.saldo = 100;
 conta1.sacar(50);
 
 console.log(conta1.saldo);
+
+// atributos privados
+class Cliente{
+    #nome;
+    #cpf;
+}
