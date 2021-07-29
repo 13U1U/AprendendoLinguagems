@@ -21,6 +21,7 @@ class ContaCorente{
     sacar(valor){
         if (this.saldo >= valor){
             this.saldo -= valor;
+            return this.saldo;
         }
     }
 }
