@@ -24,3 +24,9 @@ class ContaCorente{
         }
     }
 }
+const conta1 = new ContaCorente();
+conta1.agencia = 100012;
+conta1.saldo = 100;
+conta1.sacar(50);
+
+console.log(conta1.saldo);
