@@ -36,3 +36,8 @@ class Cliente{
     #nome;
     #cpf;
 }
+// privado por comvenção 
+class Cliente{
+    #nome;
+    #cpf;
+}
