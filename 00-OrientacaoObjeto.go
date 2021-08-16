@@ -38,6 +38,12 @@ func main() {
 
 	contaDoMattheus.Sacar(300)
 	fmt.Println(contaDoMattheus.saldo)
+	fmt.Println(contaDoAlex.Depositar(1000))
+
+	contaDoAlex.Tranferir(500, &contaDoMattheus)
+	fmt.Println(contaDoAlex)
+	fmt.Println(contaDoMattheus)
+
 }
 
 // funçãoes e metodos para um objeto
@@ -48,5 +54,26 @@ func (c *ContaCorrente) Sacar(valorDoSaque float64) string {
 		return "Saque realizado"
 	} else {
 		return "Saldo insuficiente"
+	}
+}
+
+// Multiplos retornos para uma função
+func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
+	if valorDoDeposito > 0 {
+		c.saldo += valorDoDeposito
+		return "Deposito realizado com sucesso", c.saldo
+	} else {
+		return "Valor do deposito invalido", c.saldo
+	}
+}
+
+// Ponteiro em funçãoes apontando para multiplos objetos
+func (c *ContaCorrente) Tranferir(valorDaTranferencia float64, contaDestino *ContaCorrente) bool {
+	if valorDaTranferencia < c.saldo {
+		c.saldo -= valorDaTranferencia
+		contaDestino.Depositar(valorDaTranferencia)
+		return true
+	} else {
+		return false
 	}
 }
