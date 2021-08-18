@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"banco/cliente/titular"
+	"fmt"
+)
 
 type ContaCorrente struct {
-	titular     string
+	titular     titular.Titular
 	numeroConta int
 	saldo       float64
 }
@@ -11,20 +14,26 @@ type ContaCorrente struct {
 func main() {
 	//primeiro jeito de usar orientação a objeto
 	contaDoMattheus := ContaCorrente{
-		titular:     "Mattheus",
+		titular: titular.Titular{
+			Nome:     "Mattheus",
+			Cpf:      "899.899.899.89",
+			Profisao: "Cienceiro"},
 		numeroConta: 666,
 		saldo:       1300}
 	fmt.Println(contaDoMattheus)
 
 	// segundo metodo
-	contaDoAlex := ContaCorrente{"Alex", 222, 20000}
+	clienteAlex := titular.Titular{"alex", "021.021.021.21", "analista"}
+	contaDoAlex := ContaCorrente{clienteAlex, 222, 20000}
 	fmt.Println(contaDoAlex)
 
 	// terceiro modo ultilizando ponteiros
 	var contaDoBuiu *ContaCorrente
 
 	contaDoBuiu = new(ContaCorrente)
-	contaDoBuiu.titular = "Buiu"
+	contaDoBuiu.titular.Titular.Nome = "Buiu"
+	contaDoBuiu.titular.Titular.Cpf = "555.555.555.55"
+	contaDoBuiu.titular.Titular.Profisao = "professor "
 	contaDoBuiu.numeroConta = 500
 	contaDoBuiu.saldo = 100
 
@@ -69,6 +78,7 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 
 // Ponteiro em funçãoes apontando para multiplos objetos
 func (c *ContaCorrente) Tranferir(valorDaTranferencia float64, contaDestino *ContaCorrente) bool {
+
 	if valorDaTranferencia < c.saldo {
 		c.saldo -= valorDaTranferencia
 		contaDestino.Depositar(valorDaTranferencia)
@@ -76,4 +86,12 @@ func (c *ContaCorrente) Tranferir(valorDaTranferencia float64, contaDestino *Con
 	} else {
 		return false
 	}
+}
+
+// Ultilizando interfaces #### ESTUDAR MAIS A RESPEITO---------------------------
+type verificarConta interface{
+	Sacar(valor float64) string
+}
+func PagarBoleto(conta verificarConta, valorBoleto float64){
+	conta.Sacar(valorBoleto) 
 }
